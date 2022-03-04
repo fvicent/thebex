@@ -43,7 +43,7 @@ Currently available endpoints:
 
   - `Thebex.entity_latest_timeseries(token, entity, params \\ [])`
 
-The supported `params` are mainly those documented in [Swagger](https://demo.thingsboard.io/swagger-ui/#/). See the `lib/thebex/client.ex` for further insight. 
+The supported `params` are mainly those documented in [Swagger](https://demo.thingsboard.io/swagger-ui/#/). See the [`lib/thebex/client.ex`](https://github.com/fvicent/thebex/blob/main/lib/thebex/client.ex) file for further insight. 
 
 ## Examples
 
