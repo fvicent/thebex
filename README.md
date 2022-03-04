@@ -4,7 +4,7 @@ Thebex is an Elixir client for the ThingsBoard REST API.
 
 ## Work in progress
 
-This is a work in progress, though usable, not yet stable. Expect things to change. A few endpoints have been implemented (see below). Feel free to contribute your own endpoints.
+This is a work in progress, though usable, not yet stable. There are no tests. Expect things to change. A few endpoints have been implemented (see below). Feel free to contribute your own endpoints.
 
 ## Installation
 
@@ -47,7 +47,7 @@ The supported `params` are mainly those documented in [Swagger](https://demo.thi
 
 ## Examples
 
-First login to get a token to access de API:
+First login to get a token to access the API:
 
 ```elixir
 iex(1)> {:ok, token} = Thebex.login("myaccount@example.com", "password123")
@@ -58,8 +58,9 @@ Then every function from the API will require this token as its first argument.
 
 ```elixir
 # Get the latest telemetry from a single device.
-iex(2)> device = %Thebex.Schema.EntityId{entity_type: "DEVICE", id: "a4377650-458a-11eb-c67d-553a6a5e6f64"}
-# Endpoint reference at https://demo.thingsboard.io/swagger-ui/#/telemetry-controller/getLatestTimeseriesUsingGET
+iex(2)> device = %Thebex.Schema.EntityId{entity_type: "DEVICE", id: "a4377650..."}
+# Endpoint reference at
+# https://demo.thingsboard.io/swagger-ui/#/telemetry-controller/getLatestTimeseriesUsingGET
 iex(3)> Thebex.entity_latest_timeseries(token, device)
 %{
   "humidity" => %Thebex.Schema.DataPoint{ts: 1642986254092, value: 90},
